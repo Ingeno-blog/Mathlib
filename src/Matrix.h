@@ -6,7 +6,7 @@ class Matrix{
 	public:
 		Matrix(int line, int column);
 		int getColumn();
-		int getLine()
+		int getLine();
 		double getValue(int i, int j);
 		setValue(int i, int j, double value);
 		sum(Matrix m);
@@ -14,7 +14,7 @@ class Matrix{
 		dot(int n);
 		power(int n);
 		invert();
-		~Matrix()
+		~Matrix();
 	
 	private:
 		double **tab;
