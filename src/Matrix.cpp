@@ -120,23 +120,6 @@ Matrix Matrix::operator*(int &n){
 	}
 	return buff;
 }
-Matrix::dot(Matrix m){
-	
-	Matrix buff(this->line, m.column);
-	double product= 0;
-	int i, j, k;
-	if(this->column == m.getLine()){
-		for(i=0;i!=buff.getLine();i++){
-			for(j=0;j!=buff.getColumn();j++){
-				for(k=0;k != this->column;k++){
-					product += this->getValue(i, k) * this->getValue (k, j);
-				}
-			buff.setValue(i, j, product);
-			product = 0;
-			}
-		}	
-	}
-}
 Matrix::~Matrix(){
 	
 	for(int i = 0; i != this->line; i++){

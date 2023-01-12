@@ -16,9 +16,6 @@ class Matrix{
 		Matrix operator+(Matrix &m2);
 		Matrix operator*(Matrix &m2);
 		Matrix operator*(int &n);
-		Matrix operator^(int &n);
-		dot(Matrix m);
-		dot(int n);
 		invert();
 		~Matrix();
 		
