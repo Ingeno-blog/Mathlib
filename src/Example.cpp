@@ -1,7 +1,9 @@
 #include "Matrix.hpp"
+#include "Complex.hpp"
 #include <iostream>
 int main(int argc, char *argv[]){
 	
+	/***********************************************MATRIX EXAMPLE************************************************************************/
 	Matrix m(3, 3);
 	Matrix m2(3, 3);
 	m.setValue(0, 0, 1);
@@ -14,8 +16,22 @@ int main(int argc, char *argv[]){
 	std::cout << "Matrice 3:\n" + (m * m2).toString() << std::endl;
 	Matrix m4 = m + m2;
 	std::cout << "Matrice 4:\n" + (m4).toString() << std::endl;
+	std::cout << "Matrice 5:\n" + (m4*500).toString() << std::endl; 
+	m4.setRandomValue();
+	std::cout << "Matrice 6:\n" + (m4).toString() << std::endl; 
 	delete &m;
 	delete &m2;
+	
+	/***********************************************COMPLEX EXAMPLE************************************************************************/
+	
+	Complex c1(5, 4);
+	std::cout << "Complex 1 \n" + c1.toString() << std::endl;
+	std::cout << "Complex 2 \n" + (c1 + c1).toString() << std::endl;
+	std::cout << "Complex 3 \n" + (c1 + 4).toString() << std::endl;
+	std::cout << "Complex 4 \n" + (c1 * c1).toString() << std::endl;
+	std::cout << "Complex 5 \n" + (c1 * 4).toString() << std::endl;
+	std::cout << "Complex 6 \n" + c1.Conjugate().toString() << std::endl;
+	
 	
 	return 0;
 }

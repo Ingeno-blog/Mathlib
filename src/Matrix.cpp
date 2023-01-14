@@ -9,7 +9,7 @@ Matrix::Matrix(int n_line, int n_column){
 		this->tab[i] = (double *)malloc(sizeof(double)*n_column + 1);
 		for(int j = 0;j != n_column; j++ ){
 			this->tab[i][j] = 0;
-		};
+		}
 	}
 }
 Matrix::Matrix(int size){
@@ -21,7 +21,7 @@ Matrix::Matrix(int size){
 		this->tab[i] = (double *)malloc(sizeof(double)*size + 1);
 		for(int j = 0;j != size; j++ ){
 			this->tab[i][j] = 0;
-		};
+		}
 	}
 }
 int Matrix::getColumn(){
@@ -61,6 +61,15 @@ std::string Matrix::toString(){
 		str += "] \n";
 	}
 	return str; 
+}
+Matrix::setRandomValue(){
+	
+	for(int i = 0; i != this->line; i++){
+		for(int j = 0;j != this->column; j++ ){
+			this->tab[i][j] = rand();
+		}
+	}
+	
 }
 Matrix Matrix::operator=(Matrix &n){
 
@@ -109,7 +118,7 @@ Matrix Matrix::operator*(Matrix &m2){
 	}
 	return buff;
 }
-Matrix Matrix::operator*(int &n){
+Matrix Matrix::operator*(int n){
 	
 	int i, j;
 	Matrix buff(this->line, this->column);

@@ -2,6 +2,7 @@
 #define __MATRIX_H__
 #include <iostream>
 #include <string>
+#include <cmath>
 class Matrix{
 	
 	public:
@@ -11,11 +12,13 @@ class Matrix{
 		int getLine();
 		double getValue(int i, int j);
 		setValue(int i, int j, double value);
+		setRandomValue();
 		std::string toString();
 		Matrix operator=(Matrix &n);
 		Matrix operator+(Matrix &m2);
 		Matrix operator*(Matrix &m2);
-		Matrix operator*(int &n);
+		//Matrix operator*(int &n);
+		Matrix operator*(int n);
 		invert();
 		~Matrix();
 		
